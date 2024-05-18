@@ -1,0 +1,50 @@
+#products {
+  background-color: #fff;
+  height: 100vh;
+  overflow-y: auto;
+  padding-bottom: 77px;
+  .products {
+    padding: 0 40px 0 30px;
+    &__top {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 350px 236px 240px 220px 1fr;
+      margin-bottom: 20px;
+      padding: 0 20px;
+    }
+    &__item {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 350px 240px 240px 1fr 1fr;
+      height: 66px;
+      padding: 0 17px 0 20px;
+      border-radius: 4px;
+      &__owner__box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      &__avatar {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: #ddd7;
+      }
+      &__phone {
+        text-align: end;
+      }
+      &__profits {
+        color: #00ca39;
+      }
+      &__losses {
+        color: #e44067;
+      }
+    }
+    &__item:nth-child(odd) {
+      background-color: #eef2f5;
+    }
+  }
+}
