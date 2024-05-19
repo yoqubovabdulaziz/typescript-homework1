@@ -79,3 +79,13 @@
     }
   }
 }
+
+.dark__users {
+  background-color: #000 !important;
+  color: #fff !important;
+  .users__main__top {
+    h2 {
+      color: #fff !important;
+    }
+  }
+}

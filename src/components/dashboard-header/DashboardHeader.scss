@@ -78,3 +78,21 @@
   line-height: 46.8px;
   color: #000;
 }
+
+.dashboard__top.dark__dashboard__top {
+  button {
+    color: #fff !important;
+  }
+  p {
+    color: #fff;
+  }
+}
+
+.products__header.dark__products__header {
+  h2 {
+    color: #fff;
+  }
+  button:nth-child(1) {
+    background-color: #333;
+  }
+}

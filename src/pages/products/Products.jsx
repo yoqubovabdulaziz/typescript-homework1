@@ -4,12 +4,15 @@ import "./Products.scss"
 import DashboardHeader from '../../components/dashboard-header/DashboardHeader'
 import axios from 'axios'
 import Loading from '../../components/loading/Loading'
+import { useSelector } from 'react-redux'
 
 const API = "https://dummyjson.com/users"
 
 const Products = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
+    const mode = useSelector(state => state.mode.value)
+
 
     useEffect(() => {
         setLoading(true)
@@ -39,7 +42,7 @@ const Products = () => {
     return (
         <>
             {loading && <Loading />}
-            <section id="products">
+            <section className={mode ? "dark__products" : ""} id="products">
                 <DashboardHeader title={"Overview"} />
                 <div className="products">
                     <div className="products__top">

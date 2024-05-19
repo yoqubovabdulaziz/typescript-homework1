@@ -3,6 +3,7 @@ import "./Users.scss"
 import DashboardHeader from '../../components/dashboard-header/DashboardHeader'
 import axios from 'axios'
 import Loading from '../../components/loading/Loading'
+import { useSelector } from 'react-redux'
 
 const API = "https://dummyjson.com/users"
 
@@ -10,6 +11,7 @@ const API = "https://dummyjson.com/users"
 const Users = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
+    const mode = useSelector(state => state.mode.value)
 
     useEffect(() => {
         setLoading(true)
@@ -21,7 +23,7 @@ const Users = () => {
     }, [])
 
     let user = data?.map(el => (
-        <div className="users__item">
+        <div key={el.id} className="users__item">
             <div className="users__item__detail__box">
                 <div className="users__item__avatar">
                     {el.firstName.slice(0, 1)}
@@ -46,7 +48,7 @@ const Users = () => {
     return (
         <>
             {loading && <Loading />}
-            <section id="users">
+            <section className={mode ? "dark__users" : ""} id="users">
                 <DashboardHeader title={"Tickets"} />
                 <div className="users">
                     <div className="users__main">
